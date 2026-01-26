@@ -1,4 +1,6 @@
-# TemporalApiAngularApp
+# Temporal API Angular App
+
+Testing the efficient use of the [@js-temporal/polyfill](https://www.npmjs.com/package/@js-temporal/polyfill) in an Angular application.
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.1.1.
 
