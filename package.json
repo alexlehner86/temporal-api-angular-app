@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build-exclude-temporal": "ng build --external-dependencies @js-temporal/polyfill",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
@@ -36,6 +37,7 @@
     "@angular/build": "^21.1.1",
     "@angular/cli": "^21.1.1",
     "@angular/compiler-cli": "^21.1.0",
+    "@js-temporal/polyfill": "^0.5.1",
     "jsdom": "^27.1.0",
     "typescript": "~5.9.2",
     "vitest": "^4.0.8"
