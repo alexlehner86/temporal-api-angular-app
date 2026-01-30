@@ -1,5 +1,26 @@
 <main>
-  <h1>Enjoying the Temporal API</h1>
-  <h2>The current time for time zone {{ timeZone() }} is:</h2>
-  <p>{{ currentTime() }}</p>
+    <h1>Enjoying the Temporal API</h1>
+    <h2>Current time in different time zones</h2>
+    <div class="form-field">
+        <label for="time-zone-field">Time Zone:</label>
+        <select [formField]="temporalApiTestForm.timeZone" id="time-zone-field">
+            @for (timeZone of availableTimeZones(); track timeZone) {
+                <option [value]="timeZone">{{ timeZone }}</option>
+            }
+        </select>
+    </div>
+    <output class="highlight">Current time: {{ currentTime() }}</output>
+    <h2>Date Calculator</h2>
+    <div class="form-field">
+        Calculate:
+        <input [formField]="temporalApiTestForm.amount" type="number" aria-label="Amount" />
+        <select [formField]="temporalApiTestForm.dateUnit" aria-label="Date unit">
+            @for (dateUnit of availableDateUnits(); track dateUnit) {
+                <option [value]="dateUnit">{{ dateUnit }}</option>
+            }
+        </select>
+        <button type="button" (click)="onAddToDate()">Add</button>
+        <button type="button" (click)="onSubtractFromDate()">Subtract</button>
+    </div>
+    <output class="highlight">Calculated Date: {{ calculatedDate().toString() }}</output>
 </main>

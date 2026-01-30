@@ -1,1 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    font-family: sans-serif;
+}
+
+h1 {
+    color: rebeccapurple;
+}
+
+.highlight {
+    display: block;
+    background-color: lightskyblue;
+    color: black;
+    padding: 0.5rem;
+    margin-block: 0.75rem;
+}
+
+.form-field {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+    width: 3rem;
+}
