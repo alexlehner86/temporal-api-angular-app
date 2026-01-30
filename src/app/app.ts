@@ -32,6 +32,9 @@ export class App implements OnInit {
     private readonly _now = signal(Temporal.Now.instant());
 
     public ngOnInit(): void {
+        console.log("Working with this beauty:", Temporal);
+
+        // Update current time every second
         setInterval(() => this._now.set(Temporal.Now.instant()), 1000);
 
         // Add time zone options
