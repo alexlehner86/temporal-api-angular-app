@@ -4,6 +4,22 @@ Testing the efficient use of the [@js-temporal/polyfill](https://www.npmjs.com/p
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.1.1.
 
+## Integration of Temporal API
+
+The web client uses the [Temporal API](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Temporal), the modern JavaScript object for date and time management. As Angular 21 and TypeScript don't support `Temporal` yet, the project includes the package [@js-temporal/polyfill](https://www.npmjs.com/package/@js-temporal/polyfill) as a dev dependency.
+
+The file `src/types/temporal.d.ts` declares the `Temporal` object globally, referencing the type definitions from `@js-temporal/polyfill`. This enables the use of all objects and methods that are part of the API, e.g., `Temporal.ZonedDateTime.from("...")`.
+
+If you want to use Temporal types for variables or class properties, you need to import and use the type definitions the following way:
+
+```
+import type { Temporal as TemporalType } from "@js-temporal/polyfill";
+
+let myVar: TemporalType.ZonedDateTime = ...
+```
+
+This way, the `Temporal` object and all its properties and methods are typed and can be comfortably used in implementation. During runtime of the web application, the actual global `Temporal` object of the browser will be used.
+
 ## Development server
 
 To start a local development server, run:
